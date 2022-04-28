@@ -3,7 +3,9 @@ const pickAxe = document.querySelector('#pickAxe');
 const shovel = document.querySelector('#shovel');
 const axe = document.querySelector('#axe');
 const storageElement = document.querySelector('#storage');
-
+const startGameBtn = document.querySelector('#startGameBtn');
+const startGameBackground = document.querySelector('.startGame')
+const containerGame = document.querySelector('.container')
 
 const state = {
   toolStatus: '',
@@ -101,6 +103,13 @@ function drawBoard() {
 
 
 //* EventListener
+
+
+// Click on Start Game
+startGameBtn.addEventListener('click', (event) => {
+  startGameBackground.style.display = 'none'
+  containerGame.style.display = 'flex'
+})
 
 // Click on pickAxe
 pickAxe.addEventListener('click', (event) => {

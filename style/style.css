@@ -3,11 +3,52 @@ body {
   padding: 0;
 }
 
+.startGame {
+  width: 100vw;
+  height: 100vh;
+  background: url('../images/background.jpg') center center/cover;
+
+}
+
+.containerStartGame {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  width: 80%;
+  height: 500px;
+  
+}
+.logo img{
+  width: 100%;
+}
+
+#startGameBtn {
+  width: 200px;
+  height: 80px;
+  border-radius: 15px;
+  font-size: 1.4rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: 5px solid black;
+}
+
+#startGameBtn:hover {
+  background-color: black;
+  color: #fff;
+}
+
 .container {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  
+  display: none;
+
+
 }
 
 .game-board {
@@ -16,5 +57,5 @@ body {
   display: grid;
   grid-template-columns: repeat(21, 1fr);
   grid-template-rows: repeat(20, 1fr);
-}
 
+}
