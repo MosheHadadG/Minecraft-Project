@@ -1,0 +1,58 @@
+.tools {
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  gap: 50px;
+}
+
+.boxTool {
+  width: 15vmin;
+  height: 15vmin;
+  border: 1px solid #fff;
+  color: #fff;
+  cursor: pointer;
+}
+
+#storage {
+  width: 10vmin;
+  height: 10vmin;
+  border: 1px solid #fff;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* h3 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  width: 100%;
+  height: 100%
+
+} */
+
+/** PickAxe  */
+#pickAxe {
+  background: url('../images/pickaxe.png')  center center/cover;
+}
+
+/** Shovel  */
+#shovel {
+  background: url('../images/shovel.png') center center/cover;
+}
+
+/** Axe */
+#axe {
+  background: url('../images/axe.png') center center/cover;
+}
+
+#pickAxe:hover,
+#shovel:hover,
+#axe:hover {
+  background-color: blue;
+}
+
+

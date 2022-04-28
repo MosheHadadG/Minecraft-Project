@@ -1,0 +1,31 @@
+/*? Elements */
+
+/** Sky */
+div[data-element="sky"] {
+  background-color: #87ceeb;
+}
+
+/** Grass */
+div[data-element="grass"] {
+  background: url('../images/Grass.PNG') center center/cover;
+}
+
+/** Dirt */
+div[data-element="dirt"] {
+  background: url('../images/Dirt.PNG') center center/cover;
+}
+
+/** Tree */
+div[data-element="tree"] {
+  background: url('../images/tree.png') center center/cover;
+}
+
+/** Leaf */
+div[data-element="leaf"] {
+  background: url('../images/leaf.jpg') center center/cover;
+}
+
+/** Stone */
+div[data-element="stone"] {
+  background: url('../images/stone.png') center center/cover;
+}
