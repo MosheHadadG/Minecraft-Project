@@ -2,9 +2,9 @@
   .tools {
     flex-direction: row;
     width: 120vmin;
-    height: 15vh;
+    height: 17vh;
   }
   .game-board {
-    height: 80vh;
+    height: 78vh;
   }
 }
