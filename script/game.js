@@ -11,7 +11,8 @@ const state = {
   storageStatus: ''
 }
 
-const matrix = [
+const worldsMatrix = [
+[ 
 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -22,8 +23,8 @@ const matrix = [
 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0],
 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0],
 [0, 0, 0, 0, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0],
-[0, 0, 0, 6, 6, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0],
-[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+[0, 0, 0, 6, 6, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 0, 6, 6, 0],
+[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 1, 6, 6, 6, 1],
 [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
 [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
 [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
@@ -33,8 +34,37 @@ const matrix = [
 [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
 [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
 [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
-
+],
+[
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 2, 2, 0, 0, 0, 0, 0, 0, 0],
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0],
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0],
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+[0, 0, 0, 5, 5, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+[0, 0, 0, 5, 5, 5, 0, 0, 0, 0, 0, 0, 0, 5, 5, 5, 0, 0, 0, 0, 6],
+[0, 0, 0, 5, 5, 5, 0, 0, 0, 0, 0, 0, 0, 5, 5, 5, 0, 0, 0, 6, 6],
+[0, 0, 0, 5, 5, 5, 0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 0, 0, 6, 6, 6],
+[1, 1, 0, 0, 4, 0, 0, 0, 0, 0, 1, 1, 1, 0, 4, 0, 1, 1, 1, 1, 1],
+[3, 3, 1, 0, 4, 0, 1, 1, 0, 0, 3, 3, 3, 1, 4, 1, 3, 3, 3, 3, 3],
+[3, 3, 3, 0, 4, 0, 3, 3, 1, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
+[3, 3, 3, 0, 4, 0, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
+[3, 3, 3, 0, 4, 0, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
+[3, 3, 3, 0, 4, 0, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
+[3, 3, 3, 1, 4, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
+[3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
+[3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
+[3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+]
 ];
+
+
+function randomWorldFunc() {
+  const random = Math.floor(Math.random() * worldsMatrix.length) 
+  return random;
+}
 
 const typeMatrix = {
   "0": 'sky',
@@ -53,8 +83,9 @@ const tools = {
 }
 
 function drawBoard() {
-  for (let i = 0; i < matrix.length; i++) {
-    const columns = matrix[i];
+  const randomWorld = randomWorldFunc()
+  for (let i = 0; i < worldsMatrix[randomWorld].length; i++) {
+    const columns = worldsMatrix[randomWorld][i];
     for (let j = 0; j < columns.length; j++) {
       const element = columns[j]
      const typeOfElemnt = typeMatrix[`${element}`]
@@ -111,12 +142,12 @@ gameBoard.addEventListener('click', (event) => {
   const typeElement = event.target.getAttribute("data-element");
   const storage = state.storage;
   switch(state.toolStatus) {
+
     case "pickAxe":
       if(tools.pickAxe.includes(typeElement)) {
         storage.push(typeElement)
         storageElement.setAttribute(`data-element`,`${storage[storage.length - 1]}`)
         event.target.setAttribute(`data-element`,`sky`);
-        console.log(storage)
       }
       else {
         pickAxe.style.backgroundColor = "red";
@@ -125,12 +156,12 @@ gameBoard.addEventListener('click', (event) => {
         }, 500);
       }
       break;
+
     case "shovel":
       if(tools.shovel.includes(typeElement)){
         storage.push(typeElement)
         storageElement.setAttribute(`data-element`,`${storage[storage.length - 1]}`)
         event.target.setAttribute(`data-element`,`sky`);
-        console.log(storage)
       }
       else {
         shovel.style.backgroundColor = "red";
@@ -139,12 +170,12 @@ gameBoard.addEventListener('click', (event) => {
         }, 500);
       }
       break;
+
     case "axe":
       if(tools.axe.includes(typeElement)) {
         storage.push(typeElement)
         storageElement.setAttribute(`data-element`,`${storage[storage.length - 1]}`)
         event.target.setAttribute(`data-element`,`sky`);
-        console.log(state.storage)
       }
       else {
         axe.style.backgroundColor = "red";
@@ -153,6 +184,7 @@ gameBoard.addEventListener('click', (event) => {
         }, 500);
       }
       break;
+
     case "storage":
       if(typeElement === 'sky' && storage.length > 0) {
         event.target.setAttribute(`data-element`,`${storage[storage.length - 1]}`);
