@@ -1,7 +1,8 @@
-@media(max-width: 1500px) {
+@media(max-width: 1630px) {
   .tools {
     flex-direction: row;
     width: 100vw;
+    height: 20vh;
   }
   .game-board {
     height: 80vh;
