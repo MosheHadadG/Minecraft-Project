@@ -7,7 +7,7 @@ div[data-element="sky"] {
 
 /** Grass */
 div[data-element="grass"] {
-  background: url('../images/Grass.PNG') center center/cover;
+  background: url('../images/Grass.png') center center/cover;
 }
 
 /** Dirt */
@@ -29,3 +29,8 @@ div[data-element="leaf"] {
 div[data-element="stone"] {
   background: url('../images/stone.png') center center/cover;
 }
+/** cloud */
+div[data-element="cloud"] {
+  background-color: #fff;
+}
+

@@ -47,8 +47,9 @@ body {
   justify-content: center;
   flex-wrap: wrap;
   display: none;
-
-
+  background: url('../images/backgroundGame.jpg') center center/cover;
+  width: 100vw;
+  height: 100vh;
 }
 
 .game-board {
@@ -57,5 +58,10 @@ body {
   display: grid;
   grid-template-columns: repeat(21, 1fr);
   grid-template-rows: repeat(20, 1fr);
+  cursor: pointer;
+}
+
+.box-item:hover {
+  border: .25vmin solid #fff;
 
 }
