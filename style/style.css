@@ -51,6 +51,7 @@ body {
   border: 5px solid black;
   margin-bottom: 10px;
   transition: 0.5s;
+  background-color: #f4f4f4;
 }
 
 .btnStartScreen:hover {
