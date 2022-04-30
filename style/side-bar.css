@@ -40,7 +40,6 @@
   font-family: 'BlockKie Personal Use', sans-serif;                                         
   font-size: 1.3rem;
 }
-
 .storageBoxes {
   display: grid;
   grid-template-columns: 1fr 1fr;

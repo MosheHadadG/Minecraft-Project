@@ -2,7 +2,7 @@
 import { worldsMatrix } from './matrix-worlds.js';
 // Start Game Screen
 import { buttonStartGame, howToPlay, containerGame } from './start-screen.js';
-buttonStartGame()
+buttonStartGame();
 howToPlay();
 
 const gameBoard = document.querySelector('.game-board');
@@ -11,7 +11,6 @@ const shovel = document.querySelector('#shovel');
 const axe = document.querySelector('#axe');
 const storageBoxes = document.querySelector('.storageBoxes');
 
-
 const state = {
   toolStatus: '',
   storage: [[], [], [], [], []],
@@ -19,7 +18,7 @@ const state = {
 }
 
 function randomWorldFunc() {
-  const random = Math.floor(Math.random() * worldsMatrix.length)
+  const random = Math.floor(Math.random() * worldsMatrix.length);
   return random;
 }
 
@@ -77,9 +76,9 @@ function createStorageBoxes() {
     storageBox.setAttribute('id', `${typeOfStorage}`);
     storageBox.classList.add('storage');
     const amountStorage = document.createElement('h2');
-    amountStorage.setAttribute('data-amount', `${typeOfStorage}`)
-    amountStorage.innerText = '0'
-    storageBox.appendChild(amountStorage)
+    amountStorage.setAttribute('data-amount', `${typeOfStorage}`);
+    amountStorage.innerText = '0';
+    storageBox.appendChild(amountStorage);
     storageBoxes.appendChild(storageBox);
 
   }
@@ -160,50 +159,41 @@ gameBoard.addEventListener('click', (event) => {
   }
 })
 
+
+//* on click storage element update Tool Status,
+//* and clear background tools
+function updateToolStatusStorage(idxStorage,storageElement) {
+  if(state.storage[idxStorage].length > 0) {
+    state.toolStatus = `${storageElement}`
+    pickAxe.style.backgroundColor = '';
+    shovel.style.backgroundColor = '';
+    axe.style.backgroundColor = '';
+  }
+}
+
 //* EventListeners
 //* Click on Storage
 storageBoxes.addEventListener('click', (event) => {
   const storageId = event.target.getAttribute("id");
   switch (storageId) {
     case "grass":
-      if (state.storage[0].length > 0) {
-        state.toolStatus = "storageGrass";
-        pickAxe.style.backgroundColor = ''
-        shovel.style.backgroundColor = ''
-        axe.style.backgroundColor = ''
-      }
+      updateToolStatusStorage(0,"storageGrass")
       break;
+
     case "dirt":
-      if (state.storage[1].length > 0) {
-        state.toolStatus = "storageDirt";
-        pickAxe.style.backgroundColor = ''
-        shovel.style.backgroundColor = ''
-        axe.style.backgroundColor = ''
-      }
+      updateToolStatusStorage(1, "storageDirt")
       break;
+
     case "tree":
-      if (state.storage[2].length > 0) {
-        state.toolStatus = "storageTree";
-        pickAxe.style.backgroundColor = ''
-        shovel.style.backgroundColor = ''
-        axe.style.backgroundColor = ''
-      }
+      updateToolStatusStorage(2, "storageTree")
       break;
+
     case "leaf":
-      if (state.storage[3].length > 0) {
-        state.toolStatus = "storageLeaf";
-        pickAxe.style.backgroundColor = ''
-        shovel.style.backgroundColor = ''
-        axe.style.backgroundColor = ''
-      }
+      updateToolStatusStorage(3, "storageLeaf")
       break;
+
     case "stone":
-      if (state.storage[4].length > 0) {
-        state.toolStatus = "storageStone";
-        pickAxe.style.backgroundColor = ''
-        shovel.style.backgroundColor = ''
-        axe.style.backgroundColor = ''
-      }
+      updateToolStatusStorage(4, "storageStone")
       break;
   }
 })
@@ -213,29 +203,26 @@ storageBoxes.addEventListener('click', (event) => {
 // Click on pickAxe
 pickAxe.addEventListener('click', (event) => {
   state.toolStatus = "pickAxe";
-  pickAxe.style.backgroundColor = 'blue'
-  shovel.style.backgroundColor = ''
-  axe.style.backgroundColor = ''
+  pickAxe.style.backgroundColor = 'blue';
+  shovel.style.backgroundColor = '';
+  axe.style.backgroundColor = '';
 })
 
 // Click on Shovel
 shovel.addEventListener('click', (event) => {
   state.toolStatus = "shovel";
-  pickAxe.style.backgroundColor = ''
-  shovel.style.backgroundColor = 'blue'
-  axe.style.backgroundColor = ''
+  pickAxe.style.backgroundColor = '';
+  shovel.style.backgroundColor = 'blue';
+  axe.style.backgroundColor = '';
 })
 
 // Click on Axe
 axe.addEventListener('click', (event) => {
   state.toolStatus = "axe";
-  pickAxe.style.backgroundColor = ''
-  shovel.style.backgroundColor = ''
-  axe.style.backgroundColor = 'blue'
+  pickAxe.style.backgroundColor = '';
+  shovel.style.backgroundColor = '';
+  axe.style.backgroundColor = 'blue';
 })
 
 
-// console.log(gameBoard)
-
-// console.log(state)
 

@@ -9,6 +9,7 @@
                                                 
                                                 
 }
+
 body {
   margin: 0;
   padding: 0;
@@ -132,9 +133,4 @@ body {
 .box-item:hover {
   border: .25vmin solid #fff;
 
-}
-
-.nightOrDay {
-  width: 10px;
-  height: 10px;
 }
