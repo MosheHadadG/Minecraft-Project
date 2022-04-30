@@ -4,6 +4,7 @@
     width: 100vw;
     height: 20vh;
     justify-content: space-around;
+    align-items: flex-start;
   }
   .tools {
     flex-direction: row;
@@ -40,12 +41,6 @@
 }
 
 @media(max-width: 500px) {
-  .SideBar {
-    height: 10vh;
-  }
-  .game-board {
-    height: 85vh;
-  }
   .storageBoxes h2 {
     font-size: 0.6rem;
   }
