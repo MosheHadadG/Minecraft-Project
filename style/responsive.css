@@ -40,6 +40,12 @@
 }
 
 @media(max-width: 500px) {
+  .SideBar {
+    height: 10vh;
+  }
+  .game-board {
+    height: 85vh;
+  }
   .storageBoxes h2 {
     font-size: 0.6rem;
   }
