@@ -40,7 +40,14 @@
   }
 }
 
-@media(max-width: 500px) {
+@media(max-width: 510px) {
+  .SideBar {
+    height: 12vh;
+  }
+  .game-board {
+    height: 84vh;
+  }
+  
   .storageBoxes h2 {
     font-size: 0.6rem;
   }
