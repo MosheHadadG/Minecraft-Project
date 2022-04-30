@@ -3,6 +3,7 @@
 /** Sky */
 div[data-element="sky"] {
   background-color: #87ceeb;
+  /* background-color:  #070b34; */
 }
 
 /** Grass */
@@ -32,5 +33,10 @@ div[data-element="stone"] {
 /** cloud */
 div[data-element="cloud"] {
   background-color: #fff;
+}
+
+/** water  */
+div[data-element="water"] {
+  background: url('../images/Water.png') center center/cover;
 }
 

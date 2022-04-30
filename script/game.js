@@ -1,31 +1,16 @@
+// 
+import { worldsMatrix } from './matrix-worlds.js';
+// Start Game Screen
+import { buttonStartGame, howToPlay, containerGame } from './start-screen.js';
+buttonStartGame()
+howToPlay();
+
 const gameBoard = document.querySelector('.game-board');
 const pickAxe = document.querySelector('#pickAxe');
 const shovel = document.querySelector('#shovel');
 const axe = document.querySelector('#axe');
 const storageBoxes = document.querySelector('.storageBoxes');
-const startGameBtn = document.querySelector('#startGameBtn');
-const startGameBackground = document.querySelector('.startGame')
-const containerGame = document.querySelector('.container')
 
-
-// How To Play
-const boxHowToPlay = document.querySelector(".boxHowToPlay");
-const howToPlayBtn = document.querySelector("#howToPlayBtn");
-const closeBoxHowToPlay = document.querySelector('.closeBoxHowToPlay');
-
-howToPlayBtn.addEventListener('click', () => {
-  boxHowToPlay.style.display = "block";
-})
-
-closeBoxHowToPlay.addEventListener('click', () => {
-  boxHowToPlay.style.display = "none";
-})
-
-window.addEventListener('click', (event) => {
-  if (event.target == boxHowToPlay) {
-    boxHowToPlay.style.display = "none"
-  }
-})
 
 const state = {
   toolStatus: '',
@@ -33,61 +18,12 @@ const state = {
   storageStatus: ''
 }
 
-const worldsMatrix = [
-  [
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 2, 2, 2, 2, 2, 0, 0, 0, 0, 0, 0, 5, 5, 5, 0, 0, 0, 0],
-    [0, 0, 0, 0, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 5, 5, 5, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 5, 5, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0],
-    [0, 0, 0, 6, 6, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 0, 6, 6, 0],
-    [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 1, 6, 6, 6, 1],
-    [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
-    [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
-    [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
-    [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
-    [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
-    [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
-    [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
-    [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
-    [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
-  ],
-  [
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 2, 2, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 5, 5, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 5, 5, 5, 0, 0, 0, 0, 0, 0, 0, 5, 5, 5, 0, 0, 0, 0, 6],
-    [0, 0, 0, 5, 5, 5, 0, 0, 0, 0, 0, 0, 0, 5, 5, 5, 0, 0, 0, 6, 6],
-    [0, 0, 0, 5, 5, 5, 0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 0, 0, 6, 6, 6],
-    [1, 1, 0, 0, 4, 0, 0, 0, 0, 0, 1, 1, 1, 0, 4, 0, 1, 1, 1, 1, 1],
-    [3, 3, 1, 0, 4, 0, 1, 1, 0, 0, 3, 3, 3, 1, 4, 1, 3, 3, 3, 3, 3],
-    [3, 3, 3, 0, 4, 0, 3, 3, 1, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
-    [3, 3, 3, 0, 4, 0, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
-    [3, 3, 3, 0, 4, 0, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
-    [3, 3, 3, 0, 4, 0, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
-    [3, 3, 3, 1, 4, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
-    [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
-    [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
-    [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
-  ]
-];
-
-
 function randomWorldFunc() {
   const random = Math.floor(Math.random() * worldsMatrix.length)
   return random;
 }
 
+// Types of elements
 const typeMatrix = {
   "0": 'sky',
   "1": 'grass',
@@ -95,16 +31,18 @@ const typeMatrix = {
   "3": 'dirt',
   "4": 'tree',
   "5": 'leaf',
-  "6": 'stone'
+  "6": 'stone',
+  "7": 'water',
 }
 
+// Each tool can be used for specific elements only.
 const tools = {
   pickAxe: ["stone"],
   shovel: ["dirt", "grass"],
   axe: ["tree", "leaf"]
 }
 
-
+// draw board game with matrix
 function drawBoard() {
   const randomWorld = randomWorldFunc()
   for (let i = 0; i < worldsMatrix[randomWorld].length; i++) {
@@ -121,6 +59,7 @@ function drawBoard() {
 }
 drawBoard()
 
+// elements on storage
 const storageObj = {
   0: "grass",
   1: "dirt",
@@ -133,7 +72,6 @@ const storageObj = {
 
 function createStorageBoxes() {
   for (let i = 0; i < state.storage.length; i++) {
-    console.log(storageObj[i])
     const typeOfStorage = storageObj[i];
     const storageBox = document.createElement('div');
     storageBox.setAttribute('id', `${typeOfStorage}`);
@@ -147,8 +85,9 @@ function createStorageBoxes() {
   }
 }
 createStorageBoxes()
-// Amount Storage Element
 
+// push the element to array storage and show the current amount.
+// change the element in board game to sky element.
 function storagePushChangeElement(toolElement, toolArr, typeElement, event) {
   const storage = state.storage;
   if (toolArr.includes(typeElement)) {
@@ -161,7 +100,6 @@ function storagePushChangeElement(toolElement, toolArr, typeElement, event) {
         const storageElement = document.querySelector(`#${typeStorage}`)
         storageElement.setAttribute(`data-element`, `${storage[i][0]}`)
         event.target.setAttribute(`data-element`, `sky`);
-        console.log(typeStorage, i)
       }
     }
   }
@@ -173,6 +111,8 @@ function storagePushChangeElement(toolElement, toolArr, typeElement, event) {
   }
 }
 
+// Remove the element from array storage and show the current amount.
+// change the  element in board game to current element
 function removeStorageItem(nameStorage, idxStorage, storage, typeElement, event) {
   if (typeElement === 'sky' && storage[idxStorage].length > 0) {
     event.target.setAttribute(`data-element`, `${storage[idxStorage][0]}`);
@@ -189,7 +129,7 @@ gameBoard.addEventListener('click', (event) => {
   const typeElement = event.target.getAttribute("data-element");
   const storage = state.storage;
   switch (state.toolStatus) {
-    // Tools Cases
+    //* Tools Cases
     case "pickAxe":
       storagePushChangeElement(pickAxe, tools.pickAxe, typeElement, event);
       break;
@@ -201,7 +141,7 @@ gameBoard.addEventListener('click', (event) => {
     case "axe":
       storagePushChangeElement(axe, tools.axe, typeElement, event);
       break;
-    // Storages Cases
+    //* Storages Cases
     case "storageGrass":
       removeStorageItem("grass", 0, storage, typeElement, event);
       break;
@@ -269,14 +209,6 @@ storageBoxes.addEventListener('click', (event) => {
 })
 
 
-// Click on Start Game
-startGameBtn.addEventListener('click', (event) => {
-  startGameBackground.style.animation = 'myAnim 1s ease 0s 1 normal forwards'
-  setTimeout(() => {
-    startGameBackground.style.display = 'none'
-  }, 150);
-  containerGame.style.display = 'flex'
-})
 
 // Click on pickAxe
 pickAxe.addEventListener('click', (event) => {
