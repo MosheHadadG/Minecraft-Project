@@ -42,10 +42,10 @@
 
 @media(max-width: 510px) {
   .SideBar {
-    height: 20vh;
+    height: 27vh;
   }
   .game-board {
-    height: 78vh;
+    height: 70vh;
   }
   
   .storageBoxes h2 {
