@@ -6,6 +6,27 @@ const storageBoxes = document.querySelector('.storageBoxes');
 const startGameBtn = document.querySelector('#startGameBtn');
 const startGameBackground = document.querySelector('.startGame')
 const containerGame = document.querySelector('.container')
+
+
+// How To Play
+const boxHowToPlay = document.querySelector(".boxHowToPlay");
+const howToPlayBtn = document.querySelector("#howToPlayBtn");
+const closeBoxHowToPlay = document.querySelector('.closeBoxHowToPlay');
+
+howToPlayBtn.addEventListener('click', () => {
+  boxHowToPlay.style.display = "block";
+})
+
+closeBoxHowToPlay.addEventListener('click', () => {
+  boxHowToPlay.style.display = "none";
+})
+
+window.addEventListener('click', (event) => {
+  if (event.target == boxHowToPlay) {
+    boxHowToPlay.style.display = "none"
+  }
+})
+
 const state = {
   toolStatus: '',
   storage: [[], [], [], [], []],
@@ -200,7 +221,6 @@ gameBoard.addEventListener('click', (event) => {
 })
 
 //* EventListeners
-
 //* Click on Storage
 storageBoxes.addEventListener('click', (event) => {
   const storageId = event.target.getAttribute("id");
@@ -246,18 +266,15 @@ storageBoxes.addEventListener('click', (event) => {
       }
       break;
   }
-  // if (state.storage.length > 0) {
-  //   state.toolStatus = "storage";
-  //   pickAxe.style.backgroundColor = ''
-  //   shovel.style.backgroundColor = ''
-  //   axe.style.backgroundColor = ''
-  //   state.storageStatus = state.storage[state.storage.length - 1]
-  // }
 })
+
 
 // Click on Start Game
 startGameBtn.addEventListener('click', (event) => {
-  startGameBackground.style.display = 'none'
+  startGameBackground.style.animation = 'myAnim 1s ease 0s 1 normal forwards'
+  setTimeout(() => {
+    startGameBackground.style.display = 'none'
+  }, 150);
   containerGame.style.display = 'flex'
 })
 

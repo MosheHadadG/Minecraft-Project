@@ -1,4 +1,4 @@
-@media(max-width: 1315px) {
+@media(max-width: 1345px) {
   .SideBar {
     flex-direction: row;
     width: 100vw;
@@ -7,7 +7,7 @@
   }
   .tools {
     flex-direction: row;
-    gap: 10px;
+    gap: 15px;
   }
   .game-board {
     height: 75vh;
@@ -16,4 +16,26 @@
     grid-template-columns: 1fr 1fr 1fr;
     gap: 5px;
   }
+  .storageBoxes h2 {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    justify-content: space-around;
+    height: 2px;
+    font-size: 1.2rem;
+  }
 }
+
+
+@media(max-width: 700px) {
+  .storageBoxes h2 {
+    font-size: 0.8rem;
+  }
+}
+
+@media(max-width: 500px) {
+  .storageBoxes h2 {
+    font-size: 0.6rem;
+  }
+}
+

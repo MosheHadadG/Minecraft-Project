@@ -4,7 +4,7 @@
   flex-direction: column;
   gap: 5%;
   align-items: center;
-  background-color: black;
+  /* background: url('../images/background-tools.jpg') center center/cover; */
 
 }
 
@@ -20,7 +20,7 @@
   color: #fff;
   cursor: pointer;
   border-radius: 5px;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 10px, rgb(51, 51, 51) 0px 0px 0px 4px;
+  box-shadow: rgba(255, 255, 255, 0.96) 0px 1px 10px, rgb(51, 51, 51) 0px 0px 1px 7px;
 }
 
 .storageBoxes {
@@ -32,7 +32,9 @@
 .storage {
   width: 10vmin;
   height: 10vmin;
+  box-shadow: rgba(255, 255, 255, 0.96) 0px 1px 10px;
   border: 2px solid #fff;
+  border-radius: 5px;
   color: #fff;
   cursor: pointer;
 }
@@ -64,6 +66,11 @@
 /** Axe */
 #axe {
   background: url('../images/axe.png') center center/cover;
+}
+#pickAxe,
+#shovel,
+#axe {
+  background-color: #555555;
 }
 
 #pickAxe:hover,
