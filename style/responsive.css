@@ -2,15 +2,18 @@
   .SideBar {
     flex-direction: row;
     width: 100vw;
-    height: 25vh;
+    height: 20vh;
     justify-content: space-around;
   }
   .tools {
     flex-direction: row;
     gap: 15px;
   }
+  .tools h2 {                                     
+    font-size: 1rem;
+  }
   .game-board {
-    height: 75vh;
+    height: 76vh;
   }
   .storageBoxes {
     grid-template-columns: 1fr 1fr 1fr;
@@ -31,10 +34,16 @@
   .storageBoxes h2 {
     font-size: 0.8rem;
   }
+  .tools h2 {                                     
+    font-size: 0.8rem;
+  }
 }
 
 @media(max-width: 500px) {
   .storageBoxes h2 {
+    font-size: 0.6rem;
+  }
+  .tools h2 {                                     
     font-size: 0.6rem;
   }
 }
