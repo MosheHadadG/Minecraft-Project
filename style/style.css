@@ -1,4 +1,9 @@
-
+@font-face {
+  font-family: 'VAG Primer';
+  font-style: normal;
+  font-weight: 700;
+  src: local('VAG Primer'), url('https://fonts.cdnfonts.com/s/75534/vag_primer_by_liam_butler_deqszdu.woff') format('woff');
+}
 *{
   font-family: 'VAG Primer', sans-serif;
                                                 

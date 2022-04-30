@@ -1,3 +1,10 @@
+@font-face {
+  font-family: 'BlockKie Personal Use';
+  font-style: normal;
+  font-weight: 400;
+  src: local('BlockKie Personal Use'), url('https://fonts.cdnfonts.com/s/80940/blockkiepersonaluse.woff') format('woff');
+}
+
 .SideBar {
   width: 30vmin;
   display: flex;
